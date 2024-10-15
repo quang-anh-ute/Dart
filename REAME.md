@@ -28,12 +28,13 @@ Numbers
 
 Dart has three data types for holding numbers:
 
-    - num : The equivalent to the generic number type in JavaScript.
-    - int : A numeric value without a fractional part.
-    - double: Any 64-bit (double-precision) floating point number.
+- num : The equivalent to the generic number type in JavaScript.
+- int : A numeric value without a fractional part.
+- double: Any 64-bit (double-precision) floating point number.
+  
     ![alt text](image-1.png)
 
 As Dart considers numbers as objects, numbers can expose their own utility functions as object methods. You don't need to use an additional object to apply a function to a number.
 
-    ``` let rounded = Math.round(2.5);```
-    ``` var rounded = 2.5.round(); ```
+    ![image](https://github.com/user-attachments/assets/a01bcbbb-abd4-44f0-8804-c8a2f01c8a72)
+
