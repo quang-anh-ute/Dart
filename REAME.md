@@ -95,3 +95,24 @@ A Dart variable gets its type in one of two ways:
         // Initialize the variable and the type remains `dynamic`
         name = 'bob';
         name = 5; // Allowed, as `name` has type `dynamic`.
+#### Final and const
+
+When Dart uses const, it refers to special values that it creates when compiling. Dart uses limited expressions to create these immutable values. These expressions cannot have side effects. Under these conditions, the compiler can then predict the precise value of a constant variable or expression, not just its static type.
+
+        final String name;
+        // Cannot read name here, not initialized.
+        if (useNickname) {
+          name = "Bob";
+        } else {
+          name = "Robert";
+        }
+        print(name); // Properly initialized here.
+        
+In Dart, constant variables must contain constant values. Non-constant variables can contain constant values that you can also mark as const.
+
+    var foo = const [];
+      // foo is not constant, but the value it points to is.
+      // You can reassign foo to a different list value,
+      // but its current list value cannot be altered.
+    
+    const baz = []; // Equivalent to `const []`
