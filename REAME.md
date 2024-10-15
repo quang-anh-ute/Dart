@@ -21,10 +21,7 @@ There are several built-in data types, including:
 
 ### Primitive Types
 
-Numbers
-
-![image](https://github.com/user-attachments/assets/2edb7902-3ef8-4789-af30-3fc94d026e51)
-
+#### Numbers
 
 Dart has three data types for holding numbers:
 
@@ -36,5 +33,65 @@ Dart has three data types for holding numbers:
 
 As Dart considers numbers as objects, numbers can expose their own utility functions as object methods. You don't need to use an additional object to apply a function to a number.
 
-    ![image](https://github.com/user-attachments/assets/a01bcbbb-abd4-44f0-8804-c8a2f01c8a72)
+![image](https://github.com/user-attachments/assets/a01bcbbb-abd4-44f0-8804-c8a2f01c8a72)
 
+#### Strings
+
+```var a = 'This is a string.';```
+
+##### Escaping special characters
+
+To include a character with another meaning in a string, like a $ used for string interpolation, you must escape that character. Escaping special characters in Dart works like JavaScript and most other languages. To escape special characters, precede that character with the backslash character (\).
+
+The following code shows some examples.
+```
+final singleQuotes = 'I\'m learning Dart'; // I'm learning Dart
+final doubleQuotes = "Escaping the \" character"; // Escaping the " character
+final dollarEscape = 'The price is \$3.14.'; // The price is $3.14.
+final backslashEscape = 'The Dart string escape character is \\.';
+final unicode = '\u{1F60E}'; // 😎,  Unicode scalar U+1F60E
+```
+##### String interpolation
+
+JavaScript supports template literals. These use backtick (`) character delimiters for the following reasons:
+
+    To allow for multiline strings
+    To interpolate strings with embedded expressions
+    To create special constructs called tagged templates
+
+As in JavaScript template literals, you can use the ${<expression>} syntax to insert expressions into a string literal. Dart uses this syntax and allows you to omit the curly braces when the expression uses a single identifier.
+
+        ```
+        var food = 'bread';
+        var str = 'I eat $food'; // I eat bread
+        var str = 'I eat ${food}'; // I eat bread ```
+
+#### Booleans
+Boolean values in both Dart and Javascript express a binary condition. These two values represent whether a value or expression is true or false. You can return the values using the literals true and false, or produced them using expressions like x < 5 or y == null.
+
+    var isBananaPeeled = false;
+#### Variables
+Variables in Dart work like variables in JavaScript, with two exceptions:
+
+- Each variable has a type.
+- Dart scopes all variables at the block level, like let and const variables in JavaScript.
+
+A Dart variable gets its type in one of two ways:
+
+- Declared: A type written in the declaration.
+- Inferred: An expression used to initialize the variable. By convention, use var or final when the analyzer can infer the type.
+
+        // Declare a variable with a specific type
+        // when you don't provide an initial value
+        String name;
+        // Declare and initialize a variable
+        // at the same time and Dart infers
+        // the type
+        var name = 'bob';
+
+          // Declare a variable without a type or assigned value
+        // and Dart infers the 'dynamic' type
+        var name;
+        // Initialize the variable and the type remains `dynamic`
+        name = 'bob';
+        name = 5; // Allowed, as `name` has type `dynamic`.
