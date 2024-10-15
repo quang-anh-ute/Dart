@@ -61,3 +61,47 @@ InheritedWidget: a built-in widget that allows the state to be passed down the w
 ScopedModel: a third-party state management solution that uses a centralized model to manage the state.
 
 The choice of state management technique depends on the complexity and size of the project. For smaller projects, Provider or InheritedWidget may be sufficient, while larger projects may require a more robust solution like ScopedModel or Redux.
+
+### BloC
+Bloc (Business Logic Component) is a state management pattern used in Flutter to separate presentation logic from business logic. It helps to manage and maintain the app state, making it easier to test, debug, and reuse code. It uses streams to emit new states and reacts to changes in the state.
+https://www.youtube.com/watch?v=Ep6R7U9wa0U
+
+### Provider
+Provider is a wrapper around InheritedWidget (base class for widgets that efficiently propagate information down the tree) to make them easier to use and more reusable.
+
+## JSON
+JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate. In Flutter, JSON is used for transmitting data between the client and server, typically over an HTTP connection.
+
+Flutter provides a number of libraries for working with JSON data, including the dart:convert library, which provides support for encoding and decoding JSON data.
+
+To encode a Dart object to a JSON string, you can use the jsonEncode function from the dart:convert library. To decode a JSON string to a Dart object, you can use the jsonDecode function.
+
+https://docs.flutter.dev/data-and-backend/serialization/json
+
+## AnimationController
+This class lets you perform tasks such as:
+
+Play an animation forward or in reverse, or stop an animation.
+Set the animation to a specific value.
+Define the upperBound and lowerBound values of an animation.
+Create a fling animation effect using a physics simulation.
+
+## AnimatedBuilder
+AnimatedBuilder is a widget in Flutter that allows you to build animations. It takes an Animation object and a builder function as input, and it returns a widget that is rebuilt whenever the animation changes. The builder function is called with the BuildContext and the animation object and it should return the widget that should be animated. This can be used to create complex animations with ease, without having to manage animation state or listen to animation events in the widget tree.
+
+## AnimatedWidget
+AnimatedWidget is a Flutter widget that takes an Animation object as an argument and automatically updates whenever the animation changes. This can be useful when you want to create animations that are tightly coupled to a widget, for example, to animate the size or color of a widget. With AnimatedWidget, you can encapsulate the animation logic into a single widget and reuse it throughout your app. This makes it easier to manage and maintain your animations, as the animation code is centralized and decoupled from the widget tree.
+
+## Widget Testing
+Widget testing in Flutter is the process of testing the behavior and appearance of individual widgets, in isolation from the rest of your app. It allows you to verify that a widget works correctly, displays the expected output, and behaves correctly in response to user interactions.
+
+In Flutter, you can write widget tests using the flutter_test package, which provides a testing framework for writing and running widget tests. A widget test is similar to a unit test, but instead of testing individual functions, you test entire widgets. You can use the TestWidgetsFlutterBinding to run your widget tests and simulate user interactions, such as taps, scrolls, and other gestures.
+
+The framework provides several utility functions to help you build and test widgets, such as pumpWidget, which allows you to pump a widget and its children into the widget tree and simulate a frame of animation, and find, which allows you to search the widget tree for a widget that matches specific criteria.
+
+## Integration Testing
+Integration tests in Flutter are tests that verify the behavior of your app as a whole, rather than individual widgets or functions. Integration tests allow you to test the interactions between different parts of your app and verify that the overall behavior of the app is correct.
+
+In Flutter, you can write integration tests using the flutter_driver package, which provides a testing framework for writing and running integration tests. An integration test runs on a physical device or an emulator, and uses the FlutterDriver class to interact with the app and simulate user interactions, such as taps, scrolls, and gestures.
+
+The framework provides several utility functions to help you interact with your app, such as tap, scroll, and enterText, which allow you to perform actions in your app and verify its behavior. You can also use waitFor, which allows you to wait for specific conditions to be met before continuing with the test.
