@@ -23,7 +23,8 @@ There are several built-in data types, including:
 
 Numbers
 
-#
+![image](https://github.com/user-attachments/assets/2edb7902-3ef8-4789-af30-3fc94d026e51)
+
 
 Dart has three data types for holding numbers:
 
